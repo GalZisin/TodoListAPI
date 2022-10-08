@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between align-center p-4 bg-item mt-3">
+  <div class="d-flex">
+    <div class="align-self-center mr-5">#{{ todo!.id }}</div>
+    <div class="align-self-center" *ngIf="!editTodo; else inputBlock">
+      {{ todo!.title }}
+    </div>
+    <ng-template #inputBlock>
+      <input
+        type="text"
+        [(ngModel)]="todoInput"
+        class="input ml-2"
+        placeholder="update title"
+      />
+    </ng-template>
+  </div>
+
+  <div class="d-flex">
+    <button
+      *ngIf="!editTodo; else elseBlock"
+      class="btn btn-primary mr-2"
+      (click)="updateToggle()"
+    >
+      Edit
+    </button>
+    <ng-template #elseBlock>
+      <button class="btn btn-primary mr-2" (click)="updateTodo()">
+        Update
+      </button>
+    </ng-template>
+    <button class="btn btn-danger" (click)="deleteTodo()">Delete</button>
+  </div>
+</div>

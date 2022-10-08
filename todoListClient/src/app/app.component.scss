@@ -1,0 +1,17 @@
+.display-mobile {
+  display: none;
+}
+.big-screen {
+  border: 1px solid black;
+  background-color: yellow;
+}
+
+@media (max-width: 600px) {
+  .display-mobile {
+    display: initial;
+    color: green;
+  }
+  .big-screen {
+    background-color: red;
+  }
+}
