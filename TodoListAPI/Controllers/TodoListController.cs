@@ -92,7 +92,7 @@ namespace TodoListAPI.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("{id:guid}")]
-        public async Task<IActionResult> DeleteCard([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteItem([FromRoute] Guid id)
         {
             var existingItem = await todoListDbContext.Items.FirstOrDefaultAsync(x => x.Id == id);
 
